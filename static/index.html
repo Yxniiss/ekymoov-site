@@ -9,205 +9,401 @@
   </head>
   <body>
     <div class="page-shell">
-      <header class="topbar">
-        <a class="brand" href="#hero" aria-label="Ekymoov home">
-          <span class="brand-lockup"><img class="brand-logo-image" src="ekymoov-logo.svg" alt="Ekymoov" /></span>
-        </a>
+      <div class="page-content">
+        <header class="topbar">
+          <a class="brand" href="#hero" aria-label="Ekymoov home">
+            <span class="brand-lockup">
+              <img class="brand-logo-image brand-logo-image-main" src="ekymoovlogolong.png" alt="Ekymoov" />
+            </span>
+          </a>
 
-        <nav class="topnav" aria-label="Primary navigation">
-          <a href="#problem">Constat</a>
-          <a href="#solution">Solution</a>
-          <a href="#how-it-works">Parcours</a>
-          <a href="#mission">Mission</a>
-          <a href="#contact">Contact</a>
-        </nav>
+          <nav class="topnav" aria-label="Primary navigation">
+            <a href="#problem">Constat</a>
+            <a href="#solution">Solution</a>
+            <a href="#how-it-works">Parcours</a>
+            <a href="#mission">Mission</a>
+            <a href="#contact">Contact</a>
+          </nav>
 
-        <a class="button button-secondary topbar-cta" href="#cta">Rejoindre le projet</a>
-      </header>
+          <a class="button button-secondary topbar-cta" href="#cta">Rejoindre le projet</a>
+        </header>
 
-      <main>
-        <section class="hero section" id="hero">
-          <div class="hero-copy reveal">
-            <span class="eyebrow">Application mobile PMR-first</span>
-            <h1>Une app pour reserver des trajets adaptes avec plus de confiance.</h1>
-            <p class="hero-text">
-              Ekymoov est une application mobile dediee aux personnes a mobilite reduite. Elle simplifie la reservation
-              de trajets avec des chauffeurs formes et des vehicules adaptes, dans une experience moderne, lisible et rassurante.
-            </p>
+        <main>
+          <section class="hero section" id="hero">
+            <div class="hero-copy reveal">
+              <span class="eyebrow">Application mobile PMR-first</span>
+              <h1>Une app pour reserver des trajets adaptes avec plus de confiance.</h1>
+              <p class="hero-text">
+                Ekymoov est une application mobile dediee aux personnes a mobilite reduite. Elle simplifie la reservation
+                de trajets avec des chauffeurs formes et des vehicules adaptes, dans une experience moderne, lisible et rassurante.
+              </p>
 
-            <div class="hero-actions">
-              <a class="button button-primary" href="#cta">Telecharger l'app</a>
-              <a class="button button-ghost" href="#solution">Voir comment ca marche</a>
-            </div>
-
-            <div class="hero-metrics" aria-label="Ekymoov highlights">
-              <div class="metric-card"><strong>100% mobile</strong><span>Un parcours pense d'abord pour l'usage sur smartphone.</span></div>
-              <div class="metric-card"><strong>PMR-first</strong><span>Accessibilite, clarte et disponibilite au coeur du produit.</span></div>
-            </div>
-          </div>
-
-          <div class="hero-visual reveal" aria-hidden="true">
-            <div class="mockup-window floating-card">
-              <div class="mockup-toolbar">
-                <span></span><span></span><span></span>
+              <div class="hero-actions">
+                <a class="button button-primary" href="#cta">Telecharger l'app</a>
+                <a class="button button-ghost" href="#solution">Voir comment ca marche</a>
               </div>
 
-              <div class="mockup-content">
-                <div class="mockup-phone">
-                  <div class="mockup-phone-screen">
-                    <div class="mockup-phone-top">
-                      <span>9:41</span>
-                      <div class="mockup-phone-status"><span></span><span></span><span></span><span></span></div>
-                    </div>
+              <div class="hero-metrics" aria-label="Ekymoov highlights">
+                <div class="metric-card">
+                  <strong>100% mobile</strong>
+                  <span>Un parcours pense d'abord pour l'usage sur smartphone.</span>
+                </div>
+                <div class="metric-card">
+                  <strong>PMR-first</strong>
+                  <span>Accessibilite, clarte et disponibilite au coeur du produit.</span>
+                </div>
+              </div>
+            </div>
 
-                    <div class="mockup-header-card">
-                      <div class="mockup-header-top">
-                        <span class="brand-lockup-compact"><img class="brand-logo-image" src="ekymoov-logo.svg" alt="Ekymoov" /></span>
-                        <span class="mockup-live-chip">Disponible</span>
-                      </div>
-
-                      <div class="mockup-segmented"><span class="active">Aller</span><span>Retour</span></div>
-                    </div>
-
-                    <div class="mockup-route-card">
-                      <div class="mockup-route-line"><span class="pickup"></span><span></span><span class="dropoff"></span></div>
-                      <div class="mockup-route-copy"><strong>Hopital Saint-Louis</strong><span>Depart 13:45, arrivee estimee a 14 min</span></div>
-                    </div>
-
-                    <div class="mockup-map-card">
-                      <div class="mockup-map-grid"></div>
-                      <div class="mockup-map-pin pin-a"></div>
-                      <div class="mockup-map-pin pin-b"></div>
-                      <div class="mockup-map-path"></div>
-                      <div class="mockup-map-overlay"><strong>Chauffeur a 4 min</strong><span>Vehicule PMR confirme</span></div>
-                    </div>
-
-                    <div class="mockup-driver-card">
-                      <div class="mockup-driver-avatar">M</div>
-                      <div class="mockup-driver-copy"><strong>Malik B.</strong><span>Chauffeur forme PMR, 4.9/5</span></div>
-                      <div class="mockup-driver-badge">Confirme</div>
-                    </div>
-
-                    <div class="mockup-card-grid">
-                      <div class="mockup-info-card"><span>Vehicule</span><strong>Rampe adaptee</strong></div>
-                      <div class="mockup-info-card"><span>Suivi</span><strong>Temps reel</strong></div>
-                    </div>
-
-                    <div class="mockup-primary-action">Confirmer la reservation</div>
-
-                    <div class="mockup-bottom-nav"><span class="active"></span><span></span><span></span><span></span></div>
+            <div class="hero-visual reveal" aria-hidden="true">
+              <div class="hero-visual-scene">
+                <img class="hero-image" src="hero-ekymoov-pmr.jpg.png" alt="Mobilite inclusive et application" />
+                <article class="hero-mockup-card">
+                  <div class="hero-mockup-head">
+                    <span class="mockup-live-chip">Statut : Disponible</span>
+                    <strong>18:30 - Gare Saint-Lazare vers Centre de soins</strong>
                   </div>
-                </div>
-
-                <div class="mockup-panel">
-                  <div class="mockup-panel-badge"><img class="panel-logo-image" src="ekymoov-logo.svg" alt="Ekymoov" /><span>Ekymoov network</span></div>
-                  <div class="mockup-panel-line short"></div>
-                  <div class="mockup-panel-line"></div>
-                  <div class="mockup-panel-chart"><span></span><span></span><span></span><span></span></div>
-                  <div class="mockup-status-list"><div>Disponibilite en temps reel</div><div>Reservation simplifiee</div><div>Accompagnement fiable</div></div>
-                  <div class="mockup-support-card"><strong>Support humain</strong><span>Une assistance claire pour accompagner chaque trajet.</span></div>
-                </div>
+                  <p>Chauffeur oriente PMR - Vehicule adapte - Rampe prete</p>
+                  <div class="hero-mockup-actions">
+                    <a class="button button-primary" href="#cta">Confirmer</a>
+                    <a class="button button-secondary" href="#solution">Voir le suivi</a>
+                  </div>
+                </article>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="section" id="problem">
-          <div class="problem-layout">
+          <section class="section" id="problem">
+            <div class="problem-layout">
+              <div class="section-heading reveal">
+                <span class="eyebrow">Le constat</span>
+                <h2>Se deplacer ne devrait pas devenir un obstacle supplementaire.</h2>
+                <p>
+                  Pour trop de personnes a mobilite reduite, trouver un transport adapte reste complique, imprevisible et parfois impossible.
+                  Derriere chaque trajet manque, il y a un rendez-vous reporte, une sortie annulee ou une autonomie freinee.
+                </p>
+              </div>
+
+              <div class="media-card reveal">
+                <img id="problem-img" src="" alt="Scene de mobilite urbaine et d'accompagnement" />
+              </div>
+            </div>
+
+            <div class="problem-grid" id="problem-grid"></div>
+          </section>
+
+          <section class="section" id="solution">
+            <div class="solution-layout">
+              <div class="section-heading reveal">
+                <span class="eyebrow">La solution</span>
+                <h2>Ekymoov reunit reservation, transport adapte et disponibilite dans une seule app.</h2>
+                <p>
+                  L'application simplifie toute l'experience de transport adapte : reserver un trajet, consulter la disponibilite,
+                  s'appuyer sur des chauffeurs formes et retrouver une experience plus fluide du depart a l'arrivee.
+                </p>
+              </div>
+
+              <div class="media-card reveal media-card-tall">
+                <img id="solution-img" src="" alt="Utilisation d'une application mobile dans un contexte urbain" />
+              </div>
+            </div>
+
+            <div class="feature-grid" id="feature-grid"></div>
+          </section>
+
+          <section class="section how-section" id="how-it-works">
             <div class="section-heading reveal">
-              <span class="eyebrow">Le constat</span>
-              <h2>Se deplacer ne devrait pas devenir un obstacle supplementaire.</h2>
+              <span class="eyebrow">Comment ca marche</span>
+              <h2>Une experience mobile guidee, simple a comprendre et rassurante a chaque etape.</h2>
               <p>
-                Pour trop de personnes a mobilite reduite, trouver un transport adapte reste complique, imprevisible et parfois impossible.
-                Derriere chaque trajet manque, il y a un rendez-vous reporte, une sortie annulee ou une autonomie freinee.
+                Ekymoov a ete pensee comme une vraie application de service : progressive, lisible et orientee vers un seul objectif,
+                permettre un deplacement serein.
               </p>
             </div>
 
-            <div class="media-card reveal"><img id="problem-img" src="" alt="Scene de mobilite urbaine et d'accompagnement" /></div>
-          </div>
+            <div class="steps-grid" id="steps-grid"></div>
+          </section>
 
-          <div class="problem-grid" id="problem-grid"></div>
-        </section>
-
-        <section class="section" id="solution">
-          <div class="solution-layout">
-            <div class="section-heading reveal">
-              <span class="eyebrow">La solution</span>
-              <h2>Ekymoov reunit reservation, transport adapte et disponibilite dans une seule app.</h2>
+          <section class="section value-section" id="mission">
+            <div class="value-copy reveal">
+              <span class="eyebrow">Notre mission</span>
+              <h2>Construire une mobilite plus inclusive, plus digne et plus accessible.</h2>
               <p>
-                L'application simplifie toute l'experience de transport adapte: reserver un trajet, consulter la disponibilite,
-                s'appuyer sur des chauffeurs formes et retrouver une experience plus fluide du depart a l'arrivee.
+                Ekymoov ne cherche pas seulement a digitaliser un trajet. L'objectif est de redonner de la fluidite,
+                de la visibilite et plus d'autonomie a des deplacements qui restent trop souvent compliques pour les personnes concernees.
               </p>
+
+              <div class="value-list" id="mission-list"></div>
             </div>
 
-            <div class="media-card reveal media-card-tall"><img id="solution-img" src="" alt="Utilisation d'une application mobile dans un contexte urbain" /></div>
-          </div>
+            <aside class="value-panel reveal">
+              <div class="media-card mission-image">
+                <img id="mission-img" src="" alt="Mobilite inclusive dans un environnement urbain" />
+              </div>
+              <div class="value-stat"><span>Vision produit</span><strong>Une app utile, accessible et premium</strong></div>
+              <div class="value-stat"><span>Impact</span><strong>Reduire la difficulte d'acces au transport adapte</strong></div>
+              <div class="value-stat"><span>Communaute</span><strong>Utilisateurs, chauffeurs et partenaires engages</strong></div>
+            </aside>
+          </section>
 
-          <div class="feature-grid" id="feature-grid"></div>
-        </section>
-
-        <section class="section how-section" id="how-it-works">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Comment ca marche</span>
-            <h2>Une experience mobile guidee, simple a comprendre et rassurante a chaque etape.</h2>
+          <section class="section cta-section reveal" id="cta">
+            <span class="eyebrow">Rejoindre Ekymoov</span>
+            <h2>Utilisateurs, chauffeurs et partenaires : faisons avancer la mobilite inclusive ensemble.</h2>
             <p>
-              Ekymoov a ete pensee comme une vraie application de service: progressive, lisible et orientee vers un seul objectif,
-              permettre un deplacement serein.
-            </p>
-          </div>
-
-          <div class="steps-grid" id="steps-grid"></div>
-        </section>
-
-        <section class="section value-section" id="mission">
-          <div class="value-copy reveal">
-            <span class="eyebrow">Notre mission</span>
-            <h2>Construire une mobilite plus inclusive, plus digne et plus accessible.</h2>
-            <p>
-              Ekymoov ne cherche pas seulement a digitaliser un trajet. L'objectif est de redonner de la fluidite,
-              de la visibilite et plus d'autonomie a des deplacements qui restent trop souvent compliques pour les personnes concernees.
+              Rejoignez le projet pour tester l'application, soutenir le developpement du reseau ou participer a une solution
+              concrete pour les trajets PMR de demain.
             </p>
 
-            <div class="value-list" id="mission-list"></div>
+            <div class="cta-actions">
+              <a class="button button-primary" href="#contact">Telecharger l'app</a>
+              <a class="button button-ghost" href="mailto:hello@ekymoov.com">Devenir partenaire</a>
+            </div>
+
+            <div class="cta-tags">
+              <span>Application mobile</span>
+              <span>Transport adapte</span>
+              <span>Chauffeurs formes</span>
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer" id="contact">
+          <div class="footer-main">
+            <div class="footer-brand-block">
+              <a class="brand footer-brand" href="#hero">
+                <span class="brand-lockup">
+                  <img class="brand-logo-image" src="d5a42f39-15db-4476-a462-4675fbff2598.png" alt="Ekymoov" />
+                </span>
+              </a>
+              <p class="footer-copy">L'application mobile dediee a une mobilite plus accessible pour les personnes a mobilite reduite.</p>
+              <div class="footer-pillars">
+                <span>Mobilite inclusive</span>
+                <span>Service humain</span>
+                <span>Experience rassurante</span>
+              </div>
+            </div>
+
+            <div class="footer-column">
+              <span class="footer-heading">Navigation</span>
+              <nav class="footer-links" aria-label="Footer links">
+                <a href="#problem">Constat</a>
+                <a href="#solution">Solution</a>
+                <a href="#how-it-works">Parcours</a>
+                <a href="#mission">Mission</a>
+              </nav>
+            </div>
+
+            <div class="footer-column">
+              <span class="footer-heading">Confiance</span>
+              <nav class="footer-links" aria-label="Legal links">
+                <a href="mailto:hello@ekymoov.com">Contact</a>
+                <a href="mentions-legales.html">Mentions legales</a>
+                <a href="#privacy-modal" data-modal-open="privacy-modal">Confidentialite</a>
+                <a href="#cookie-banner" data-cookie-manage>Cookies</a>
+              </nav>
+            </div>
+
+            <div class="footer-column footer-commitment">
+              <span class="footer-heading">Notre engagement</span>
+              <p>
+                Construire un service plus fiable, plus digne et plus accessible pour les personnes a mobilite reduite,
+                avec une approche claire, humaine et professionnelle.
+              </p>
+              <a class="button button-primary footer-button" href="#cta">Rejoindre Ekymoov</a>
+            </div>
           </div>
 
-          <aside class="value-panel reveal">
-            <div class="media-card mission-image"><img id="mission-img" src="" alt="Mobilite inclusive dans un environnement urbain" /></div>
-            <div class="value-stat"><span>Vision produit</span><strong>Une app utile, accessible et premium</strong></div>
-            <div class="value-stat"><span>Impact</span><strong>Reduire la difficulte d'acces au transport adapte</strong></div>
-            <div class="value-stat"><span>Communaute</span><strong>Utilisateurs, chauffeurs et partenaires engages</strong></div>
-          </aside>
-        </section>
+          <div class="footer-bottom">
+            <p>Ekymoov - Une mobilite plus accessible, pensee avec exigence et engagement.</p>
+            <a href="#hero">Retour en haut</a>
+          </div>
+        </footer>
+      </div>
+    </div>
 
-        <section class="section cta-section reveal" id="cta">
-          <span class="eyebrow">Rejoindre Ekymoov</span>
-          <h2>Utilisateurs, chauffeurs et partenaires: faisons avancer la mobilite inclusive ensemble.</h2>
+    <div class="modal" id="privacy-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-panel" role="document">
+        <button class="modal-close" type="button" aria-label="Fermer la fenetre de confidentialite" data-modal-close>
+          Fermer
+        </button>
+        <div class="modal-body">
+          <span class="eyebrow">Confidentialite</span>
+          <h2 id="privacy-title">Politique de confidentialite</h2>
           <p>
-            Rejoignez le projet pour tester l'application, soutenir le developpement du reseau ou participer a une solution
-            concrete pour les trajets PMR de demain.
+            Ekymoov attache une importance particuliere a la protection des donnees personnelles. Cette politique explique
+            quelles donnees peuvent etre collectees, pour quelles finalites, combien de temps elles sont conservees et quels sont vos droits.
           </p>
 
-          <div class="cta-actions">
-            <a class="button button-primary" href="#contact">Telecharger l'app</a>
-            <a class="button button-ghost" href="mailto:hello@ekymoov.com">Devenir partenaire</a>
+          <div class="policy-sections">
+            <section class="policy-card">
+              <h3>1. Responsable du traitement</h3>
+              <p>
+                Le responsable du traitement est Ekymoov. Pour toute question relative a la confidentialite ou a l'exercice de vos droits,
+                vous pouvez contacter l'equipe a l'adresse : <a href="mailto:hello@ekymoov.com">hello@ekymoov.com</a>.
+              </p>
+              <p>
+                A completer si besoin : adresse postale de la societe, numero d'immatriculation, nom du representant legal et coordonnees du DPO.
+              </p>
+              <p>
+                Les informations d'identification de l'editeur et de l'hebergeur peuvent etre consultees sur la page
+                <a href="mentions-legales.html">Mentions legales</a>.
+              </p>
+            </section>
+
+            <section class="policy-card">
+              <h3>2. Donnees susceptibles d'etre collectees</h3>
+              <ul class="policy-list">
+                <li>donnees d'identification : nom, prenom, email, telephone ;</li>
+                <li>donnees liees a la reservation : horaires, points de prise en charge, destination, preferences de trajet ;</li>
+                <li>informations utiles a l'accessibilite du service, strictement necessaires a l'accompagnement du trajet ;</li>
+                <li>donnees techniques : logs, adresse IP, appareil, navigateur, statistiques de consultation ;</li>
+                <li>contenu des demandes envoyees via formulaire, email ou prise de contact.</li>
+              </ul>
+            </section>
+
+            <section class="policy-card">
+              <h3>3. Finalites du traitement</h3>
+              <ul class="policy-list">
+                <li>repondre aux demandes de contact et d'information ;</li>
+                <li>gerer les reservations et le suivi des trajets ;</li>
+                <li>ameliorer l'experience utilisateur, la qualite de service et l'accessibilite ;</li>
+                <li>assurer la securite du site et prevenir les usages frauduleux ;</li>
+                <li>adresser, si la base legale le permet, des communications utiles au service.</li>
+              </ul>
+            </section>
+
+            <section class="policy-card">
+              <h3>4. Bases legales</h3>
+              <ul class="policy-list">
+                <li>execution de mesures precontractuelles ou d'un contrat ;</li>
+                <li>respect d'obligations legales ;</li>
+                <li>interet legitime d'Ekymoov a exploiter et securiser son service ;</li>
+                <li>consentement, notamment pour certains cookies ou communications.</li>
+              </ul>
+            </section>
+
+            <section class="policy-card">
+              <h3>5. Destinataires des donnees</h3>
+              <p>
+                Les donnees sont accessibles uniquement aux personnes habilitees chez Ekymoov et, si necessaire, a ses sous-traitants techniques,
+                prestataires d'hebergement, outils de communication ou partenaires operationnels, dans la limite de leurs missions.
+              </p>
+              <p>
+                Les donnees ne sont pas vendues. Tout partage doit etre justifie, encadre contractuellement et limite a ce qui est necessaire.
+              </p>
+            </section>
+
+            <section class="policy-card">
+              <h3>6. Duree de conservation</h3>
+              <ul class="policy-list">
+                <li>demandes de contact : pendant le temps necessaire au traitement puis archivage limite ;</li>
+                <li>donnees de compte ou de reservation : pendant la relation de service puis selon les obligations legales ;</li>
+                <li>donnees techniques et journaux : pour une duree adaptee a la securite et au bon fonctionnement du service.</li>
+              </ul>
+            </section>
+
+            <section class="policy-card">
+              <h3>7. Vos droits</h3>
+              <ul class="policy-list">
+                <li>droit a l'information ;</li>
+                <li>droit d'acces ;</li>
+                <li>droit de rectification ;</li>
+                <li>droit a l'effacement ;</li>
+                <li>droit a la limitation ;</li>
+                <li>droit d'opposition ;</li>
+                <li>droit a la portabilite lorsque celui-ci est applicable.</li>
+              </ul>
+              <p>
+                Vous pouvez exercer vos droits en ecrivant a <a href="mailto:hello@ekymoov.com">hello@ekymoov.com</a>. Un justificatif peut etre
+                demande en cas de doute raisonnable afin de securiser la demande.
+              </p>
+            </section>
+
+            <section class="policy-card">
+              <h3>8. Cookies et traceurs</h3>
+              <p>
+                Le site peut utiliser des cookies necessaires a son fonctionnement et, le cas echeant, des cookies de mesure d'audience
+                ou de personnalisation soumis aux regles applicables. Lorsqu'un consentement est requis, il doit pouvoir etre retire facilement.
+              </p>
+            </section>
+
+            <section class="policy-card">
+              <h3>9. Securite</h3>
+              <p>
+                Ekymoov met en oeuvre des mesures techniques et organisationnelles raisonnables pour proteger les donnees personnelles contre
+                la perte, l'acces non autorise, l'alteration, la divulgation ou la destruction.
+              </p>
+            </section>
+
+            <section class="policy-card">
+              <h3>10. Reclamation</h3>
+              <p>
+                Si vous estimez, apres nous avoir contactes, que vos droits ne sont pas respectes, vous pouvez introduire une reclamation
+                aupres de la CNIL : <a href="https://www.cnil.fr/" target="_blank" rel="noreferrer">www.cnil.fr</a>.
+              </p>
+            </section>
+
+            <section class="policy-card">
+              <h3>11. Mise a jour</h3>
+              <p>
+                La presente politique peut etre mise a jour pour refleter les evolutions legales, techniques ou operationnelles du service.
+                Date de derniere mise a jour : 28 mars 2026.
+              </p>
+            </section>
           </div>
-
-          <div class="cta-tags"><span>Application mobile</span><span>Transport adapte</span><span>Chauffeurs formes</span></div>
-        </section>
-      </main>
-
-      <footer class="footer" id="contact">
-        <div>
-          <a class="brand footer-brand" href="#hero"><span class="brand-lockup"><img class="brand-logo-image" src="ekymoov-logo.svg" alt="Ekymoov" /></span></a>
-          <p class="footer-copy">L'application mobile dediee a une mobilite plus accessible pour les personnes a mobilite reduite.</p>
         </div>
+      </div>
+    </div>
 
-        <nav class="footer-links" aria-label="Footer links">
-          <a href="#mission">A propos</a>
-          <a href="mailto:hello@ekymoov.com">Contact</a>
-          <a href="#hero">Confidentialite</a>
-        </nav>
-      </footer>
+    <div class="cookie-banner" id="cookie-banner" aria-live="polite" aria-label="Gestion des cookies" hidden>
+      <div class="cookie-banner-copy">
+        <span class="eyebrow">Cookies</span>
+        <h3>Votre vie privee, clairement respectee</h3>
+        <p>
+          Ekymoov utilise des cookies necessaires au fonctionnement du site et, uniquement avec votre accord, des cookies de mesure
+          d'audience pour ameliorer l'experience. Vous pouvez accepter, refuser ou gerer votre choix a tout moment.
+        </p>
+      </div>
+      <div class="cookie-banner-actions">
+        <button class="button button-ghost" type="button" data-cookie-action="reject">Refuser</button>
+        <button class="button button-secondary" type="button" data-cookie-action="preferences">Voir la politique</button>
+        <button class="button button-primary" type="button" data-cookie-action="accept">Accepter</button>
+      </div>
+    </div>
+
+    <div class="cookie-preferences" id="cookie-preferences" aria-label="Preferences cookies" hidden>
+      <div class="cookie-preferences-head">
+        <div>
+          <span class="eyebrow">Preferences</span>
+          <h3>Choisir vos cookies</h3>
+          <p>Vous pouvez garder uniquement les cookies necessaires ou autoriser aussi la mesure d'audience.</p>
+        </div>
+        <button class="cookie-close" type="button" data-cookie-pref-close>Fermer</button>
+      </div>
+
+      <div class="cookie-options">
+        <label class="cookie-option">
+          <input type="checkbox" checked disabled />
+          <span>
+            <strong>Cookies necessaires</strong>
+            <span>Indispensables au fonctionnement du site. Ils restent toujours actifs.</span>
+          </span>
+        </label>
+
+        <label class="cookie-option">
+          <input type="checkbox" id="cookie-analytics" />
+          <span>
+            <strong>Mesure d'audience</strong>
+            <span>Permet de mieux comprendre l'utilisation du site afin d'ameliorer l'experience.</span>
+          </span>
+        </label>
+      </div>
+
+      <div class="cookie-preferences-actions">
+        <button class="button button-ghost" type="button" data-cookie-pref-save="essential">Uniquement necessaires</button>
+        <button class="button button-primary" type="button" data-cookie-pref-save="selected">Enregistrer mes choix</button>
+      </div>
     </div>
   </body>
 </html>

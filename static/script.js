@@ -1,10 +1,7 @@
 const gallery = {
-  problem:
-    "https://images.pexels.com/photos/13840334/pexels-photo-13840334.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  solution:
-    "https://images.pexels.com/photos/6331229/pexels-photo-6331229.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  mission:
-    "https://images.pexels.com/photos/17486363/pexels-photo-17486363.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  problem: "hero-ekymoov-pmr.jpg.png",
+  solution: "human-assistance-driver.jpg.png",
+  mission: "inclusive-city-mobility.jpg.png",
 };
 
 const problems = [
@@ -32,6 +29,9 @@ const missionPoints = [
   "Creer un service mobile utile, humain et fiable au quotidien.",
   "Reunir utilisateurs, chauffeurs et partenaires autour d'une mobilite plus inclusive.",
 ];
+
+const COOKIE_CONSENT_KEY = "ekymoov_cookie_consent";
+const COOKIE_PREFERENCES_KEY = "ekymoov_cookie_preferences";
 
 function getFeatureIcon(type) {
   const icons = {
@@ -101,7 +101,7 @@ function renderMissionList() {
     .map(
       (item) => `
       <div class="value-item reveal">
-        <span class="value-check" aria-hidden="true">+</span>
+        <span class="value-check" aria-hidden="true">&#10003;</span>
         <p>${item}</p>
       </div>
     `,
@@ -135,6 +135,192 @@ function setupRevealObserver() {
   elements.forEach((element) => observer.observe(element));
 }
 
+function setupActiveNav() {
+  const navLinks = Array.from(document.querySelectorAll(".topnav a"));
+  if (navLinks.length === 0) return;
+
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  if (currentPage === "mentions-legales.html") {
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href") || "";
+      if (href.includes("#contact")) {
+        link.classList.add("is-active");
+      }
+    });
+    return;
+  }
+
+  const sectionLinks = navLinks
+    .map((link) => {
+      const href = link.getAttribute("href") || "";
+      if (!href.startsWith("#")) return null;
+
+      const section = document.querySelector(href);
+      if (!section) return null;
+      return { link, section };
+    })
+    .filter(Boolean);
+
+  if (sectionLinks.length === 0) return;
+
+  const setActiveLink = (id) => {
+    sectionLinks.forEach(({ link, section }) => {
+      link.classList.toggle("is-active", `#${section.id}` === id);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleEntry = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (visibleEntry?.target?.id) {
+        setActiveLink(`#${visibleEntry.target.id}`);
+      }
+    },
+    { rootMargin: "-25% 0px -55% 0px", threshold: [0.2, 0.4, 0.6] },
+  );
+
+  sectionLinks.forEach(({ section }) => observer.observe(section));
+  setActiveLink("#hero");
+}
+
+function setupModal() {
+  const triggers = Array.from(document.querySelectorAll("[data-modal-open]"));
+  const modal = document.getElementById("privacy-modal");
+  if (!modal || triggers.length === 0) return;
+
+  const closeTargets = Array.from(modal.querySelectorAll("[data-modal-close]"));
+
+  const openModal = () => {
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      openModal();
+    });
+  });
+
+  closeTargets.forEach((target) => {
+    target.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+
+  if (window.location.hash === "#privacy-modal") {
+    openModal();
+  }
+
+  return { openModal, closeModal };
+}
+
+function setupCookieBanner(modalControls) {
+  const banner = document.getElementById("cookie-banner");
+  const preferencesPanel = document.getElementById("cookie-preferences");
+  const analyticsInput = document.getElementById("cookie-analytics");
+  if (!banner) return;
+
+  const actionButtons = Array.from(banner.querySelectorAll("[data-cookie-action]"));
+  const manageTriggers = Array.from(document.querySelectorAll("[data-cookie-manage]"));
+  const preferenceButtons = Array.from(document.querySelectorAll("[data-cookie-pref-save]"));
+  const preferenceClose = document.querySelector("[data-cookie-pref-close]");
+  const storedChoice = window.localStorage.getItem(COOKIE_CONSENT_KEY);
+  const storedPreferences = window.localStorage.getItem(COOKIE_PREFERENCES_KEY);
+
+  const showBanner = () => {
+    banner.hidden = false;
+  };
+
+  const hideBanner = () => {
+    banner.hidden = true;
+  };
+
+  const showPreferences = () => {
+    if (!preferencesPanel) return;
+    preferencesPanel.hidden = false;
+  };
+
+  const hidePreferences = () => {
+    if (!preferencesPanel) return;
+    preferencesPanel.hidden = true;
+  };
+
+  if (analyticsInput && storedPreferences) {
+    try {
+      const parsed = JSON.parse(storedPreferences);
+      analyticsInput.checked = Boolean(parsed.analytics);
+    } catch {
+      analyticsInput.checked = false;
+    }
+  }
+
+  if (!storedChoice) {
+    showBanner();
+  }
+
+  actionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const action = button.getAttribute("data-cookie-action");
+
+      if (action === "preferences") {
+        showPreferences();
+        return;
+      }
+
+      if (action === "accept") {
+        window.localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+      }
+
+      if (action === "reject") {
+        window.localStorage.setItem(COOKIE_CONSENT_KEY, "rejected");
+      }
+
+      hideBanner();
+      hidePreferences();
+    });
+  });
+
+  preferenceButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const mode = button.getAttribute("data-cookie-pref-save");
+      const preferences = {
+        necessary: true,
+        analytics: mode === "selected" ? Boolean(analyticsInput?.checked) : false,
+      };
+
+      window.localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(preferences));
+      window.localStorage.setItem(COOKIE_CONSENT_KEY, preferences.analytics ? "accepted" : "rejected");
+      hidePreferences();
+      hideBanner();
+    });
+  });
+
+  preferenceClose?.addEventListener("click", hidePreferences);
+
+  manageTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      showPreferences();
+    });
+  });
+}
+
 function init() {
   renderProblemCards();
   renderSolutionFeatures();
@@ -142,6 +328,9 @@ function init() {
   renderMissionList();
   hydrateImages();
   setupRevealObserver();
+  setupActiveNav();
+  const modalControls = setupModal();
+  setupCookieBanner(modalControls);
 }
 
 document.addEventListener("DOMContentLoaded", init);
