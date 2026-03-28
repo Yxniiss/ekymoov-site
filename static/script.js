@@ -187,6 +187,45 @@ function setupActiveNav() {
   setActiveLink("#hero");
 }
 
+function setupMobileNav() {
+  const topbar = document.querySelector(".topbar");
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".topnav");
+  if (!topbar || !toggle || !nav) return;
+
+  const navLinks = Array.from(nav.querySelectorAll("a"));
+
+  const closeMenu = () => {
+    topbar.classList.remove("menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Ouvrir le menu");
+  };
+
+  const openMenu = () => {
+    topbar.classList.add("menu-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", "Fermer le menu");
+  };
+
+  toggle.addEventListener("click", () => {
+    if (topbar.classList.contains("menu-open")) {
+      closeMenu();
+      return;
+    }
+    openMenu();
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      closeMenu();
+    }
+  });
+}
+
 function setupModal() {
   const triggers = Array.from(document.querySelectorAll("[data-modal-open]"));
   const modal = document.getElementById("privacy-modal");
@@ -328,6 +367,7 @@ function init() {
   renderMissionList();
   hydrateImages();
   setupRevealObserver();
+  setupMobileNav();
   setupActiveNav();
   const modalControls = setupModal();
   setupCookieBanner(modalControls);
