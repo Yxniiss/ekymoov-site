@@ -5,29 +5,29 @@ const gallery = {
 };
 
 const problems = [
-  { value: "1 Francais sur 6", label: "est concerne par une situation de handicap en France." },
-  { value: "Des trajets incertains", label: "quand l'offre adaptee est difficile a trouver ou indisponible au bon moment." },
-  { value: "Une autonomie freinee", label: "pour aller a un rendez-vous, travailler, etudier ou simplement sortir." },
+  { value: "1 Français sur 6", label: "est concerné par une situation de handicap en France." },
+  { value: "Des trajets incertains", label: "quand l'offre adaptée est difficile à trouver ou indisponible au bon moment." },
+  { value: "Une autonomie freinée", label: "pour aller à un rendez-vous, travailler, étudier ou simplement sortir." },
 ];
 
 const solutionFeatures = [
-  { icon: "booking", title: "Reservation simple", description: "Recherchez et reservez un trajet adapte depuis l'application mobile en quelques gestes." },
-  { icon: "driver", title: "Chauffeurs formes", description: "Ekymoov connecte les utilisateurs avec des chauffeurs sensibilises aux besoins PMR." },
-  { icon: "vehicle", title: "Vehicules adaptes", description: "Une offre pensee pour accueillir la mobilite reduite dans de meilleures conditions de confort." },
-  { icon: "live", title: "Disponibilite en temps reel", description: "Consultez les disponibilites avant le depart pour reduire l'incertitude et mieux anticiper." },
+  { icon: "booking", title: "Réservation simple", description: "Recherchez et réservez un trajet adapté depuis l'application mobile en quelques gestes." },
+  { icon: "driver", title: "Chauffeurs formés", description: "Ekymoov connecte les utilisateurs avec des chauffeurs sensibilisés aux besoins PMR." },
+  { icon: "vehicle", title: "Véhicules adaptés", description: "Une offre pensée pour accueillir la mobilité réduite dans de meilleures conditions de confort." },
+  { icon: "live", title: "Disponibilité en temps réel", description: "Consultez les disponibilités avant le départ pour réduire l'incertitude et mieux anticiper." },
 ];
 
 const steps = [
-  { number: "01", title: "Telechargez l'application", description: "Installez Ekymoov et accedez a une interface mobile claire, lisible et rassurante." },
-  { number: "02", title: "Creez votre profil", description: "Renseignez vos besoins pour recevoir une experience plus adaptee a votre mobilite." },
-  { number: "03", title: "Reservez votre trajet", description: "Choisissez votre horaire, verifiez la disponibilite et confirmez votre course depuis l'app." },
-  { number: "04", title: "Voyagez en confiance", description: "Un chauffeur forme et un vehicule adapte facilitent le trajet du depart a l'arrivee." },
+  { number: "01", title: "Téléchargez l'application", description: "Installez Ekymoov et accédez à une interface mobile claire, lisible et rassurante." },
+  { number: "02", title: "Créez votre profil", description: "Renseignez vos besoins pour recevoir une expérience plus adaptée à votre mobilité." },
+  { number: "03", title: "Réservez votre trajet", description: "Choisissez votre horaire, vérifiez la disponibilité et confirmez votre course depuis l'app." },
+  { number: "04", title: "Voyagez en confiance", description: "Un chauffeur formé et un véhicule adapté facilitent le trajet du départ à l'arrivée." },
 ];
 
 const missionPoints = [
-  "Rendre les deplacements plus simples pour les personnes a mobilite reduite.",
-  "Creer un service mobile utile, humain et fiable au quotidien.",
-  "Reunir utilisateurs, chauffeurs et partenaires autour d'une mobilite plus inclusive.",
+  "Rendre les déplacements plus simples pour les personnes à mobilité réduite.",
+  "Créer un service mobile utile, humain et fiable au quotidien.",
+  "Réunir utilisateurs, chauffeurs et partenaires autour d'une mobilité plus inclusive.",
 ];
 
 const COOKIE_CONSENT_KEY = "ekymoov_cookie_consent";

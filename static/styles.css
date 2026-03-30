@@ -529,18 +529,33 @@ main,
   line-height: 0;
 }
 
+#problem .media-card {
+  aspect-ratio: 4 / 3;
+}
+
 .media-card-tall {
   min-height: 360px;
+  aspect-ratio: 4 / 5;
 }
 
 .media-card-tall img {
   display: block;
+  width: 100%;
   height: 100%;
 }
 
 #solution-img {
-  height: calc(100% + 4px);
-  margin-bottom: -4px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#problem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .problem-grid,
@@ -1534,8 +1549,13 @@ main,
     min-height: 240px;
   }
 
+  #problem .media-card {
+    aspect-ratio: 4 / 3;
+  }
+
   .media-card-tall {
     min-height: 240px;
+    aspect-ratio: 4 / 3;
   }
 
   .problem-grid,
