@@ -1,125 +1,13 @@
-const gallery = {
-  problem: "hero-ekymoov-pmr.jpg.png",
-  solution: "human-assistance-driver.jpg.png",
-  mission: "inclusive-city-mobility.jpg.png",
-};
-
-const problems = [
-  { value: "1 Français sur 6", label: "est concerné par une situation de handicap en France." },
-  { value: "Des trajets incertains", label: "quand l'offre adaptée est difficile à trouver ou indisponible au bon moment." },
-  { value: "Une autonomie freinée", label: "pour aller à un rendez-vous, travailler, étudier ou simplement sortir." },
-];
-
-const solutionFeatures = [
-  { icon: "booking", title: "Réservation simple", description: "Recherchez et réservez un trajet adapté depuis l'application mobile en quelques gestes." },
-  { icon: "driver", title: "Chauffeurs formés", description: "Ekymoov connecte les utilisateurs avec des chauffeurs sensibilisés aux besoins PMR." },
-  { icon: "vehicle", title: "Véhicules adaptés", description: "Une offre pensée pour accueillir la mobilité réduite dans de meilleures conditions de confort." },
-  { icon: "live", title: "Disponibilité en temps réel", description: "Consultez les disponibilités avant le départ pour réduire l'incertitude et mieux anticiper." },
-];
-
-const steps = [
-  { number: "01", title: "Téléchargez l'application", description: "Installez Ekymoov et accédez à une interface mobile claire, lisible et rassurante." },
-  { number: "02", title: "Créez votre profil", description: "Renseignez vos besoins pour recevoir une expérience plus adaptée à votre mobilité." },
-  { number: "03", title: "Réservez votre trajet", description: "Choisissez votre horaire, vérifiez la disponibilité et confirmez votre course depuis l'app." },
-  { number: "04", title: "Voyagez en confiance", description: "Un chauffeur formé et un véhicule adapté facilitent le trajet du départ à l'arrivée." },
-];
-
-const missionPoints = [
-  "Rendre les déplacements plus simples pour les personnes à mobilité réduite.",
-  "Créer un service mobile utile, humain et fiable au quotidien.",
-  "Réunir utilisateurs, chauffeurs et partenaires autour d'une mobilité plus inclusive.",
-];
-
 const COOKIE_CONSENT_KEY = "ekymoov_cookie_consent";
 const COOKIE_PREFERENCES_KEY = "ekymoov_cookie_preferences";
-
-function getFeatureIcon(type) {
-  const icons = {
-    booking: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3V6M17 3V6M4 9H20M6 5H18C19.1 5 20 5.9 20 7V18C20 19.1 19.1 20 18 20H6C4.9 20 4 19.1 4 18V7C4 5.9 4.9 5 6 5Z"/><path d="M9 13H15M9 17H13"/></svg>`,
-    driver: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12C14.2 12 16 10.2 16 8C16 5.8 14.2 4 12 4C9.8 4 8 5.8 8 8C8 10.2 9.8 12 12 12Z"/><path d="M5 20C5.8 16.9 8.5 15 12 15C15.5 15 18.2 16.9 19 20"/><path d="M17 13L19 15L22 12"/></svg>`,
-    vehicle: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16L6.4 11.5C6.7 10.6 7.5 10 8.4 10H15.6C16.5 10 17.3 10.6 17.6 11.5L19 16"/><path d="M4 16H20V18C20 18.6 19.6 19 19 19H18C17.4 19 17 18.6 17 18V17H7V18C7 18.6 6.6 19 6 19H5C4.4 19 4 18.6 4 18V16Z"/><path d="M7 13H17"/><circle cx="7.5" cy="16.5" r="1"/><circle cx="16.5" cy="16.5" r="1"/></svg>`,
-    live: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12H6.5C8.6 12 10.5 13.9 10.5 16V18"/><path d="M19 12H17.5C15.4 12 13.5 13.9 13.5 16V18"/><path d="M12 20V16"/><path d="M12 4C14.761 4 17 6.239 17 9C17 11.761 14.761 14 12 14C9.239 14 7 11.761 7 9C7 6.239 9.239 4 12 4Z"/></svg>`,
-  };
-  return icons[type] || "";
-}
-
-function renderProblemCards() {
-  const container = document.getElementById("problem-grid");
-  if (!container) return;
-  container.innerHTML = problems
-    .map(
-      (problem) => `
-      <article class="problem-card reveal">
-        <strong>${problem.value}</strong>
-        <p>${problem.label}</p>
-      </article>
-    `,
-    )
-    .join("");
-}
-
-function renderSolutionFeatures() {
-  const container = document.getElementById("feature-grid");
-  if (!container) return;
-  container.innerHTML = solutionFeatures
-    .map((feature, index) => {
-      const indexText = String(index + 1).padStart(2, "0");
-      return `
-      <article class="feature-card reveal">
-        <div class="feature-topline">
-          <div class="feature-icon">${getFeatureIcon(feature.icon)}</div>
-          <span class="feature-index">${indexText}</span>
-        </div>
-        <h3>${feature.title}</h3>
-        <p>${feature.description}</p>
-      </article>
-    `;
-    })
-    .join("");
-}
-
-function renderSteps() {
-  const container = document.getElementById("steps-grid");
-  if (!container) return;
-  container.innerHTML = steps
-    .map(
-      (step) => `
-      <article class="step-card reveal">
-        <span class="step-number">${step.number}</span>
-        <h3>${step.title}</h3>
-        <p>${step.description}</p>
-      </article>
-    `,
-    )
-    .join("");
-}
-
-function renderMissionList() {
-  const container = document.getElementById("mission-list");
-  if (!container) return;
-  container.innerHTML = missionPoints
-    .map(
-      (item) => `
-      <div class="value-item reveal">
-        <span class="value-check" aria-hidden="true">&#10003;</span>
-        <p>${item}</p>
-      </div>
-    `,
-    )
-    .join("");
-}
-
-function hydrateImages() {
-  const p = document.getElementById("problem-img");
-  const s = document.getElementById("solution-img");
-  const m = document.getElementById("mission-img");
-  if (p) p.src = gallery.problem;
-  if (s) s.src = gallery.solution;
-  if (m) m.src = gallery.mission;
-}
+const EMAILJS_PUBLIC_KEY = "-6pr_1ZZSV3lC6jSy";
+const EMAILJS_SERVICE_ID = "service_v460n5p";
+const EMAILJS_TEMPLATE_ID = "template_fgbf308";
 
 function setupRevealObserver() {
   const elements = Array.from(document.querySelectorAll(".reveal"));
+  if (elements.length === 0) return;
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -226,40 +114,73 @@ function setupMobileNav() {
   });
 }
 
+function getFocusableElements(container) {
+  return Array.from(
+    container.querySelectorAll(
+      'a[href], button:not([disabled]), textarea, input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    ),
+  );
+}
+
 function setupModal() {
   const triggers = Array.from(document.querySelectorAll("[data-modal-open]"));
   const modal = document.getElementById("privacy-modal");
   if (!modal || triggers.length === 0) return;
 
   const closeTargets = Array.from(modal.querySelectorAll("[data-modal-close]"));
+  let lastFocusedElement = null;
 
-  const openModal = () => {
+  const handleKeydown = (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+      return;
+    }
+
+    if (event.key !== "Tab") return;
+
+    const focusable = getFocusableElements(modal);
+    if (focusable.length === 0) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
+  const openModal = (trigger = null) => {
+    lastFocusedElement = trigger || document.activeElement;
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", handleKeydown);
+
+    const focusable = getFocusableElements(modal);
+    focusable[0]?.focus();
   };
 
   const closeModal = () => {
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    document.removeEventListener("keydown", handleKeydown);
+    lastFocusedElement?.focus?.();
   };
 
   triggers.forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
-      openModal();
+      openModal(trigger);
     });
   });
 
   closeTargets.forEach((target) => {
     target.addEventListener("click", closeModal);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && modal.classList.contains("is-open")) {
-      closeModal();
-    }
   });
 
   if (window.location.hash === "#privacy-modal") {
@@ -269,7 +190,7 @@ function setupModal() {
   return { openModal, closeModal };
 }
 
-function setupCookieBanner(modalControls) {
+function setupCookieBanner() {
   const banner = document.getElementById("cookie-banner");
   const preferencesPanel = document.getElementById("cookie-preferences");
   const analyticsInput = document.getElementById("cookie-analytics");
@@ -360,17 +281,82 @@ function setupCookieBanner(modalControls) {
   });
 }
 
+function setupRequestForm() {
+  const form = document.querySelector("[data-request-form]");
+  if (!form) return;
+
+  const status = form.querySelector("[data-request-status]");
+  const submitButton = form.querySelector('button[type="submit"]');
+  const fields = {
+    name: form.querySelector("#request-name"),
+    email: form.querySelector("#request-email"),
+    profile: form.querySelector("#request-profile"),
+    city: form.querySelector("#request-city"),
+    message: form.querySelector("#request-message"),
+  };
+
+  if (!window.emailjs) {
+    if (status) {
+      status.textContent = "Le service d'envoi n'est pas disponible pour le moment. Merci d'utiliser l'email direct.";
+    }
+    return;
+  }
+
+  window.emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    if (status) {
+      status.textContent = "Envoi en cours...";
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+
+    try {
+      await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        nom: fields.name?.value?.trim() || "",
+        email: fields.email?.value?.trim() || "",
+        profil: fields.profile?.value || "",
+        ville: fields.city?.value?.trim() || "",
+        besoin: fields.message?.value?.trim() || "",
+      });
+
+      form.reset();
+
+      if (status) {
+        status.textContent = "Votre demande a bien été envoyée. Nous reviendrons vers vous rapidement.";
+      }
+    } catch (error) {
+      const errorMessage =
+        error?.text ||
+        error?.message ||
+        error?.statusText ||
+        "Erreur EmailJS inconnue";
+
+      if (status) {
+        status.textContent = `L'envoi a échoué. ${errorMessage}`;
+      }
+      console.error("EmailJS error:", error);
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    }
+  });
+}
+
 function init() {
-  renderProblemCards();
-  renderSolutionFeatures();
-  renderSteps();
-  renderMissionList();
-  hydrateImages();
   setupRevealObserver();
   setupMobileNav();
   setupActiveNav();
-  const modalControls = setupModal();
-  setupCookieBanner(modalControls);
+  setupModal();
+  setupCookieBanner();
+  setupRequestForm();
 }
 
 document.addEventListener("DOMContentLoaded", init);

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ekymoov - Mentions légales</title>
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <div class="page-shell">
@@ -16,7 +17,19 @@
             </span>
           </a>
 
-          <nav class="topnav" aria-label="Navigation mentions légales">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+            aria-label="Ouvrir le menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="topnav" id="primary-navigation" aria-label="Navigation mentions légales">
             <a href="index.html#problem">Constat</a>
             <a href="index.html#solution">Solution</a>
             <a href="index.html#mission">Mission</a>
@@ -48,24 +61,25 @@
               <article class="policy-card legal-card reveal is-visible">
                 <span class="legal-card-number">01</span>
                 <h3>Éditeur du site</h3>
-                <p>Nom ou dénomination sociale : Ekymoov</p>
-                <p>Forme juridique : à compléter</p>
-                <p>Capital social : à compléter</p>
-                <p>Siège social : à compléter</p>
-                <p>Numéro SIREN / SIRET : à compléter</p>
-                <p>Numéro de TVA intracommunautaire : à compléter si applicable</p>
-                <p>Directeur de la publication : à compléter</p>
+                <p>Nom du projet : Ekymoov</p>
+                <p>Statut : projet en cours de création</p>
+                <p>Forme juridique : non définie à ce jour</p>
+                <p>Capital social : non applicable à ce stade</p>
+                <p>Siège social : à compléter lors de la création de la structure</p>
+                <p>Numéro SIREN / SIRET : non attribué à ce jour</p>
+                <p>Numéro de TVA intracommunautaire : non applicable à ce stade</p>
+                <p>Directeur de la publication : à compléter lors de la mise en ligne définitive</p>
                 <p>Contact : <a href="mailto:contact@ekymoov.com">contact@ekymoov.com</a></p>
               </article>
 
               <article class="policy-card legal-card reveal is-visible">
                 <span class="legal-card-number">02</span>
                 <h3>Hébergement</h3>
-                <p>Hébergeur : à compléter</p>
-                <p>Raison sociale : à compléter</p>
-                <p>Adresse : à compléter</p>
-                <p>Téléphone : à compléter</p>
-                <p>Site web : à compléter</p>
+                <p>Hébergeur : IONOS</p>
+                <p>Raison sociale : 1&amp;1 IONOS SARL / 1&amp;1 Internet SARL</p>
+                <p>Adresse : 7 place de la Gare, BP 70109, 57201 Sarreguemines Cedex, France</p>
+                <p>Téléphone : 0970 808 911</p>
+                <p>Site web : <a href="https://www.ionos.fr/" target="_blank" rel="noreferrer">www.ionos.fr</a></p>
               </article>
 
               <article class="policy-card legal-card reveal is-visible">
@@ -152,7 +166,8 @@
             <div class="legal-bottom-note reveal is-visible">
               <p>
                 Pour rester cohérent avec la politique de confidentialité et le bandeau cookies du site, veillez à harmoniser ici les informations
-                juridiques, l'identité de l'éditeur et les coordonnées de contact définitives.
+                juridiques, l'identité de l'éditeur et les coordonnées de contact définitives. La partie hébergeur est renseignée, mais la partie
+                éditeur devra être mise à jour dès la création officielle de l'entreprise.
               </p>
               <a class="button button-primary" href="index.html">Retour au site</a>
             </div>
