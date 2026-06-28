@@ -23,9 +23,16 @@
       name="twitter:description"
       content="Réservez plus facilement un transport adapté avec des chauffeurs formés et des véhicules pensés pour les trajets PMR."
     />
-    <link rel="icon" type="image/png" href="ekymoov-logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="ekymoov-logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="ekymoov-logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="ekymoov-logo.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#187f7c" />
+    <meta name="msapplication-TileColor" content="#187f7c" />
+    <meta name="msapplication-TileImage" content="ekymoov-logo.png" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script defer src="script.js"></script>
   </head>
   <body>
@@ -57,6 +64,7 @@
             <a href="#solution">Solution</a>
             <a href="#how-it-works">Parcours</a>
             <a href="#trust">Confiance</a>
+            <a href="#partners">Partenaires</a>
             <a href="#contact">Contact</a>
           </nav>
 
@@ -285,6 +293,78 @@
             </div>
           </section>
 
+          <section class="section ecosystem-section" id="partners">
+            <div class="section-heading reveal">
+              <span class="eyebrow">Partenaires &amp; Presse</span>
+              <h2>Ceux qui s'engagent et parlent d'Ekymoov.</h2>
+              <p>
+                <span class="mobile-text-desktop">Nos collaborateurs et les médias qui relaient notre mission vers une mobilité plus inclusive, plus digne et plus accessible.</span>
+                <span class="mobile-text-short">Nos partenaires et la presse qui soutiennent notre vision.</span>
+              </p>
+            </div>
+
+            <div class="ecosystem-partners reveal">
+              <div class="ecosystem-sub-header">
+                <span class="ecosystem-sub-pill">Nos partenaires</span>
+              </div>
+              <div class="partners-list">
+                <article class="partner-card">
+                  <div class="partner-card-header">
+                    <div class="partner-logo-wrap">
+                      <img src="cpm_logo.jpg" alt="Logo CPM" class="partner-logo" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="partner-meta">
+                      <h3>CPM</h3>
+                      <p>Partenaire d'Ekymoov dans le développement d'une mobilité adaptée et inclusive, CPM partage l'ambition d'un service de transport plus humain et plus accessible pour les personnes à mobilité réduite.</p>
+                    </div>
+                  </div>
+                  <div class="partner-video-label">
+                    <span class="eyebrow">Interview</span>
+                    <p>Découvrez l'interview entre le dirigeant d'Ekymoov et CPM autour de leur vision commune de la mobilité inclusive.</p>
+                  </div>
+                  <div class="partner-video-wrap">
+                    <iframe
+                      src="https://www.youtube.com/embed/8oOj4p0R4gs"
+                      title="Interview Ekymoov x CPM – Partenariat mobilité inclusive"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                      loading="lazy"
+                    ></iframe>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="ecosystem-press reveal">
+              <div class="ecosystem-sub-header">
+                <span class="ecosystem-sub-pill ecosystem-sub-pill--press">Ils parlent de nous</span>
+              </div>
+              <div class="press-cards">
+                <a
+                  class="press-card"
+                  href="https://www.iledefrance.fr/toutes-les-actualites/ekymoov-lappli-de-transport-adapte-aux-personnes-mobilite-reduite"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Lire l'article de la Région Île-de-France sur Ekymoov"
+                >
+                  <div class="press-card-logo-wrap">
+                    <img src="OIP (5).webp" alt="Région Île-de-France" class="press-card-logo" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="press-card-body">
+                    <strong>Région Île-de-France</strong>
+                    <p>Ekymoov mis à l'honneur par la Région Île-de-France via son incubateur Perqo, pour son approche innovante du transport adapté PMR.</p>
+                    <span class="press-card-cta">
+                      Lire l'article
+                      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+
           <section class="section value-section" id="mission">
             <div class="value-copy reveal">
               <span class="eyebrow">Notre mission</span>
@@ -376,6 +456,15 @@
                 ></textarea>
               </label>
 
+              <div class="turnstile-wrap">
+                <div
+                  class="cf-turnstile"
+                  data-sitekey="0x4AAAAAADseWaMfGs8HmVA7"
+                  data-theme="light"
+                  data-language="fr"
+                ></div>
+              </div>
+
               <div class="request-actions">
                 <button class="button button-primary" type="submit">Envoyer ma demande</button>
                 <a class="button button-ghost" href="mailto:contact@ekymoov.com">Écrire directement par email</a>
@@ -412,6 +501,7 @@
                 <a href="#solution">Solution</a>
                 <a href="#how-it-works">Parcours</a>
                 <a href="#trust">Confiance</a>
+                <a href="#partners">Partenaires</a>
               </nav>
             </div>
 

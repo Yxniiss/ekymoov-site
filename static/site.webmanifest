@@ -1,0 +1,17 @@
+{
+  "name": "Ekymoov - Transport adapté PMR",
+  "short_name": "Ekymoov",
+  "description": "Ekymoov simplifie la réservation de trajets PMR avec des chauffeurs formés et des véhicules adaptés.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4fbfa",
+  "theme_color": "#187f7c",
+  "icons": [
+    {
+      "src": "ekymoov-logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

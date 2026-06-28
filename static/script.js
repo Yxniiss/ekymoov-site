@@ -3,6 +3,7 @@ const COOKIE_PREFERENCES_KEY = "ekymoov_cookie_preferences";
 const EMAILJS_PUBLIC_KEY = "-6pr_1ZZSV3lC6jSy";
 const EMAILJS_SERVICE_ID = "service_v460n5p";
 const EMAILJS_TEMPLATE_ID = "template_fgbf308";
+const TURNSTILE_SITE_KEY = "0x4AAAAAADseWaMfGs8HmVA7";
 
 function setupRevealObserver() {
   const elements = Array.from(document.querySelectorAll(".reveal"));
@@ -309,6 +310,14 @@ function setupRequestForm() {
 
     if (!form.reportValidity()) return;
 
+    const turnstileToken = form.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (!turnstileToken) {
+      if (status) {
+        status.textContent = "Veuillez compléter la vérification de sécurité avant d'envoyer.";
+      }
+      return;
+    }
+
     if (status) {
       status.textContent = "Envoi en cours...";
     }
@@ -342,6 +351,10 @@ function setupRequestForm() {
         status.textContent = `L'envoi a échoué. ${errorMessage}`;
       }
       console.error("EmailJS error:", error);
+
+      if (window.turnstile) {
+        window.turnstile.reset();
+      }
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
